@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Antrag - Tierhalterhaftpflichtversicherung</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="phoenixversichert_style.css" rel="stylesheet" />
+
+    <style>
+        :root{
+            --primary-color:#f07d00;
+            --secondary-color:#747474;
+            --accent-color:#a0ce4e;
+            --font-family-default:"Source Sans Pro", Arial, Helvetica, sans-serif;
+            --header-color:#363839;
+            --h1-header-fontsize:38px;
+            --site-width:1400px;
+            --smaller-width:1200px;
+        }
+        .logo_container{
+            margin-top: 30px;
+            margin-bottom: 5px;
+
+        }
+        .navbar{
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+        .navbar-wrapper{
+            /* margin: 0 auto; */
+            padding-left: 30px;
+            padding-right: 30px;
+            height: 104px;
+            max-width:var(--site-width);
+            align-items: unset !important;
+            /* padding: 0px !important; */
+        }
+        .main-wrapper{
+            max-width: var(--site-width);
+            margin: 0 auto;
+            padding-top: 32px;
+            margin-bottom: 32px !important;
+        }
+        h1 {
+            font-family: var(--font-family-default);
+            font-weight: 400;
+            line-height: 1.12;
+            letter-spacing: 0px;
+            font-size: var(--h1-header-fontsize);
+            color: var(--header-color) !important;
+        }
+        .pt-45{
+            padding-top: 45px !important;
+        }
+        .step-question{
+            font-size: 2.5em;
+            line-height: 1.4em;
+            margin-top: 50px;
+            margin-bottom: 45px;
+        }
+
+        @media only screen and (max-width:1920px) {
+        .main-wrapper{
+            /* Changed code */
+            /* width: var(--smaller-width); */
+            margin: 0 auto;
+            padding: 30px;
+            
+        }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="phoenixversichert_script.js" ></script>
+</head>
+<body>
+
+    <div class="container-wrapper">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+        <!-- Add cointainer-fluid together with margin: 0 auto to property on line 34-->
+        <div class="navbar-wrapper">
+            <div class="logo_container">
+                <a class="" href="https://barrabas-consulting.de/">
+                    <img src="phoenixversichert_icons/logo_marcel_barrabas.jpg" srcset="https://barrabas-consulting.de/wp-content/uploads/2022/09/logo.jpg 1x, https://barrabas-consulting.de/wp-content/uploads/2022/09/logo2x.jpg 2x" width="250" height="37" style="max-height:37px;height:auto;" alt="Barrabas Consulting Logo" data-retina_logo_url="https://barrabas-consulting.de/wp-content/uploads/2022/09/logo2x.jpg" class="logo">
+                </a>
+            </div>
+            <!-- <a class="navbar-brand" href="#">Sticky top</a> -->
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <h1 class="top-header">
+            Tierhalterhaftpflicht
+        </h1>
+        <div class="container-process-bar" >
+          <div class="d-flex align-items-center ">
+            <span class="content">Schritte</span>
+            
+            <ul id="progressbar" class="mx-4">
+              <li id="mainpoint-1" class="mainpoint active"><span class="step-info active"></span></li>
+              <li class="subpoint "><span class="step-info"></span></li>
+              <li class="subpoint "><span class="step-info"></span></li>
+              <li id="mainpoint-2" class="mainpoint "><span class="step-info"></span></li>
+              
+              <!-- loop based on number of animals --> <!-- <li class="subpoint "><span class="step-info"></span></li> -->
+
+              <li class="subpoint "><span class="step-info"></span></li>
+              <li id="mainpoint-3" class="mainpoint "><span class="step-info"></span></li>
+              <li class="subpoint"><span class="step-info"></span></li>
+              <li id="mainpoint-4" class="mainpoint"><span class="step-info"></span></li>
+              <li id="mainpoint-5" class="mainpoint"><span class="step-info"></span></li>
+              <li id="mainpoint-6" class="mainpoint"><span class="step-info" ></span></li>
+            </ul>
+          </div>
+            <span class="point-description" id="step-description">Angaben zum Tier – Beitragsberechnung – Tiere</span>
+        </div>
+
+        
+        <div id="step-1" class="step w-100">
+          <h1 class="step-question">Wie viele Tiere werden mit der THV abgesichert?</h1>
+          <div class="line-bottom"></div>
+          <input type="number" name="animalNumber" placeholder="number of animals" />
+        </div>
+
+        <div id="step-2" class="step w-100 d-none">
+            <h1 class="step-question">Wie viele Schäden hattest du in den letzten drei Jahren?</h1>
+            <div class="previous-box d-flex flex-row justify-content-end my-2">
+            <button onclick="prevStep()" class=" hyperlink_txt btn btn-outline-primary previous action-button-previous" value="Zurück">Zurück</button>
+            </div>
+            <div class="line-bottom"></div>
+            <div class="row nograp">
+                <div class="col-12 col-sm-12 col-lg-6 col-xl-6 col-xxl-5">
+                  <div class="col-12">
+                      <div class="padding-lg d-flex flex-row" data-item="damage" data-typ="counter">
+                        <div class="icon minus" id="minus" onclick="decreaseVorschaden()"><span></span></div>
+                        <div class="icon plus" id="plus" onclick="increaseVorschaden()"><span></span></div>
+                        <div class="damage-amount">
+                          <div class="schadenAmt fs-14">
+                              <span id="vorschaden" class="d-none">0 </span>
+                              <span id="schaden" class="d-none"> Schaden</span> 
+                              <span id="keineSchaden"></span> 
+                              <span class="description fs-14" id="damage-amount">Keine Schaden</span> 
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="w-100 d-none mt-5" id="limit"><span class="item-tooltip icon-info"></span> Bei mehr als einem Vorschaden können wir dir leider keinen Versicherungsschutz anbieten. </div>
+
+            </div>
+        </div>
+
+        
+        <div id="step-3" class="step w-100 d-none">
+          <h1 class="step-question">Deine Angebote - Wähle einen Beitrag aus.</h1>
+          <div class="previous-box d-flex flex-row justify-content-end my-2">
+              <button onclick="prevStep()" class=" hyperlink_txt btn btn-outline-primary previous action-button-previous" value="Zurück">Zurück</button>
+          </div>
+          <div class="line-bottom"></div>
+          <div class="premium-cards">
+              <!-- <div class="main-card"> -->
+              <div class="card p-3">
+                  <span class="premium-text fs-18 my-4">max-THV Plus</span>
+                  <span class="mb-2"><b>Die Highlights</b></span>
+                  <div class="card-border-line"></div>
+
+                  <!-- Added class to display content in one column on smaller screens and a margin top and bottom to each of them -->
+                  
+                  <div class="my-3 d-flex flex-md-row flex-column checkbox-text-tooltip">
+                      <input class="checkbox-input my-1" type="checkbox">
+                      <span class="fs-12 my-1 price-text">150 € Selbstbeteiligung</span>
+                      <span class="item-tooltip icon-info my-1"></span>
+                  </div>
+                  <div class="card-border-line"></div>
+                  <span class="fs-34 my-2"> 127.00 €</span>
+                  <span class="mb-1">Jahresprämie inkl. Versicherungssteuer</span>
+                  <div class="card-border-line"></div>
+
+                  <div class="no1 fs-18">1</div>
+                  <button class="btn btn-outline-primary action-button" onclick="goNextStep()">Jetzt abschließen</button>
+              </div>
+              <!-- </div> -->
+
+              <!-- <div class="main-card"> -->
+              <div class="card p-3">
+                  <span class="premium-text fs-18 my-4">max-THV Premium</span>
+                  <span  class="mb-2"><b>Die Highlights</b></span>
+                  <div class="card-border-line"></div>
+                  <!-- Added class to display content in one column on smaller screens and a margin top and bottom to each of them -->
+                  <div class="my-3 d-flex flex-md-row flex-column checkbox-text-tooltip">
+                      <input class="checkbox-input my-1" type="checkbox">
+                      <span class="fs-12 my-1 price-text">150 € Selbstbeteiligung</span>
+                      <span class="item-tooltip icon-info my-1"></span>
+                  </div>
+                  <div class="card-border-line"></div>
+                  <span class="fs-32 my-2">157.00 €</span>
+                  <span class="mb-1">Jahresprämie inkl. Versicherungssteuer</span>
+                  <div class="card-border-line"></div>
+
+                  <div class="no2 fs-18">2</div>
+                  <button class="btn btn-outline-primary action-button" onclick="goNextStep()">Jetzt abschließen</button>
+              </div>
+              <!-- </div> -->
+          </div>
+
+        </div>
+
+        
+        <div id="step-4" class="step w-100 d-none">
+          <div>
+            <h1 class="step-question">Jetzt wird es persönlich - erzähle uns mehr über dein Tier.</h1>
+            <div class="previous-box d-flex flex-row justify-content-end my-2">
+                <button onclick="prevStep()" class=" hyperlink_txt btn btn-outline-primary previous action-button-previous" value="Zurück">Zurück</button>
+            </div>
+            <div class="line-bottom"></div>
+            <div>
+                <div class="row" id="animalForm">
+                    <!-- dog Form -->
+                    <form class="dogForm d-none">
+                        <div class="col-12 col-sm-12 col-lg-9 col-xl-9">
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <input type="text" id="dogName" placeholder="Name des 1. Hundes" required class="form-control">
+                                            <div class="fill-in-help">Gib bitte den Namen deines Hundes an.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <select id="dogBreed" class="form-select" required>
+                                                <option value=""></option>
+                                                <option value="Tierrasse">Hunderasse</option>
+                                            </select>
+                                            
+                                            <div class="fill-in-help">Wähle bitte die Hunderasse aus.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                        <input type="text" id="dogBirthDate" placeholder="Geburtsdatum(TT.MM.JJJJ)" onfocus="(this.type = 'date')"  class="form-control" required>
+                                            <div class="fill-in-help"> Gib bitte das Geburtsdatum deines Hundes an. </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <input type="text" id="dogFurColor" placeholder="Fellfarbe" class="form-control" required>
+                                            <div class="fill-in-help">Gib bitte die Fellfarbe deines Hundes an.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <select id="dogGender" required class="form-select">
+                                                <option value="" ></option>
+                                                <option value="weiblich">weiblich</option>
+                                                <option value="mannlich">mannlich</option>
+                                            </select>
+                                            <div class="fill-in-help">Gib bitte das Geburtsdatum deines Hundes an.</div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group d-none py-2" id="chip" >
+                                            <input type="text" id="dogChipNumber" placeholder="Chip-/Tatowierungsnummer(optional)" class="form-control" >
+                                            <div class="fill-in-help"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                    </div> 
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3"></div>
+                  
+                    </form>
+                    <!-- horse form -->
+                    <div class="horseForm d-none">
+                        <div class="col-12 col-sm-12 col-lg-9 col-xl-9 ">
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <input type="text" id="horseName" placeholder="Name des 1. Pferdes" required class="form-control">
+                                            <div class="fill-in-help">Gib bitte den Namen deines Pferdes an.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <select id="horseBreed" class="form-select" required>
+                                                <option value=""></option>
+                                                <option value="Tierrasse">Tierrasse</option>
+                                            </select>
+                                            
+                                            <div class="fill-in-help">Wähle bitte die Pferdrasse aus.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                        <input type="text" id="horseBirthDate" placeholder="Geburtsdatum(TT.MM.JJJJ)" onfocus="(this.type = 'date')"  class="form-control" required>
+                                            <div class="fill-in-help"> Gib bitte das Geburtsdatum deines Pferdes an. </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group py-2">
+                                            <input type="text" id="horseFurColor" placeholder="Fellfarbe" class="form-control" required>
+                                            
+                                            <div class="fill-in-help">Gib bitte die Fellfarbe deines Pferdes an.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                        <select id="horseGender" required class="form-select">
+                                            <option value="" ></option>
+                                            <option value="weiblich">weiblich</option>
+                                            <option value="mannlich">mannlich</option>
+                                        </select>
+                                        <div class="fill-in-help">Gib bitte das Geburtsdatum deines Pferdes an.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div> 
+                      <div class="col-12 col-sm-12 col-lg-3 col-xl-3"></div>
+                      
+                    </div>
+
+                    <!-- pony Form -->
+                    <div class="ponyForm d-none">
+                        <div class="col-12 col-sm-12 col-lg-9 col-xl-9 ">
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <input type="text" id="ponyName" placeholder="Name des 1.Ponys" required class="form-control">
+                                            <div class="fill-in-help">Gib bitte den Namen deines Ponys an.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <select id="ponyBreed" class="form-select" required>
+                                                <option value=""></option>
+                                                <option value="Tierrasse">Tierrasse</option>
+                                            </select>
+                                            
+                                            <div class="fill-in-help">Wähle bitte die Ponyrasse aus.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                        <input type="text" id="ponyBirthDate" placeholder="Geburtsdatum(TT.MM.JJJJ)" onfocus="(this.type = 'date')"  class="form-control" required>
+                                            <div class="fill-in-help"> Gib bitte das Geburtsdatum deines Ponys an. </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group py-2">
+                                        <input type="text" id="ponyFurColor" placeholder="Fellfarbe" class="form-control" required>
+                                        
+                                            <div class="fill-in-help">Gib bitte die Fellfarbe deines Ponys an.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <select id="ponyGender" required class="form-select">
+                                                <option value="" ></option>
+                                                <option value="weiblich">weiblich</option>
+                                                <option value="mannlich">mannlich</option>
+                                            </select>
+                                            <div class="fill-in-help">Gib bitte das Geburtsdatum deines Ponys an.</div>
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                            </div> 
+                        </div> 
+                      <div class="col-12 col-sm-12 col-lg-3 col-xl-3"></div>
+                    </div>
+                    
+                    <!-- donkey Form -->
+                    <div class="donkeyForm d-none">
+                    
+                        <div class="col-12 col-sm-12 col-lg-9 col-xl-9 ">
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <input type="text" id="donkeyName" placeholder="Name des 1. Esels" required class="form-control">
+                                            <div class="fill-in-help">Gib bitte den Namen deines Hundes an.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                            <select id="donkeyBreed" class="form-select" required>
+                                                <option value=""></option>
+                                                <option value="Tierrasse">Tierrasse</option>
+                                            </select>
+                                            
+                                            <div class="fill-in-help">Wähle bitte die Eselrasse aus.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                        <input type="text" id="donkeyBirthDate" placeholder="Geburtsdatum(TT.MM.JJJJ)" onfocus="(this.type = 'date')"  class="form-control" required>
+                                            <div class="fill-in-help"> Gib bitte das Geburtsdatum deines Esels an. </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group py-2">
+                                        <input type="text" id="donkeyFurColor" placeholder="Fellfarbe" class="form-control" required>
+                                        
+                                            <div class="fill-in-help">Gib bitte die Fellfarbe deines Esels an.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        
+                            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                                <div class="row formgroup">
+                                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                        <div class="form-group has-validation py-2">
+                                        <select id="donkeyGender" required class="form-select">
+                                            <option value="" ></option>
+                                            <option value="weiblich">weiblich</option>
+                                            <option value="mannlich">mannlich</option>
+                                        </select>
+                                        <div class="fill-in-help">Gib bitte das Geburtsdatum deines Esels an.</div>
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                            </div> 
+                        </div> 
+                      <div class="col-12 col-sm-12 col-lg-3 col-xl-3"></div>
+                      
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div id="step-5" class="step w-100 d-none">
+          <h1 class="step-question">Wähle den Versicherungsbeginn?</h1>
+          <div class="previous-box d-flex flex-row justify-content-end my-2">
+              <button onclick="goPrevStep()" class=" hyperlink_txt btn btn-outline-primary previous action-button-previous" value="Zurück">Zurück</button>
+          </div>
+          <div class="line-bottom"></div>
+          <div class="d-flex flex-wrap">
+              <div class="col-12 col-sm-12 col-lg-10 col-xl-10">
+                  <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                      <div class="formgroup">
+                          <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                              <div class="form-group">
+                                  <input type="text" id="beginDate" placeholder="Versicherungsbeginn (TT.MM.JJJJ)" onfocus="(this.type='date')" class="form-control" required>
+                                  <div class="fill-in-help"></div>
+                              </div>
+                          </div> 
+                          <div class="d-flex flex-wrap gx-2 col-sm-12 col-lg-12 col-xl-12 col-xxl-12">
+                              <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                  <div class="form-group">
+                                      <select id="contractStatus" name="status" class="form-select" required>
+                                          <option value="" selected disabled>Aktueller Versicherungsstatus</option>
+                                          <option value="kein">kein Vorvertrag</option>
+                                          <option value="versicherungsnehmer">Kundigung durch den Versicherungsnehmer</option>
+                                          <option value="versicherer">Kundigung durch den Versicherer</option>
+                                      </select>
+                                      <div class="fill-in-help"></div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                                  <div class="d-none" id="cancel-info">
+                                      <span class="item-tooltip icon-info"></span> 
+                                      <span>Wenn dein letzter Versicherer den Vertrag gekündigt hat, können wir dir leider keinen Versicherungsschutz anbieten.</span>
+                                  </div>
+                              </div>
+                          
+                          </div>
+                          <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                              <div class="form-group d-none" id="contract-details">
+                                  <input type="text" id="preliminary-company" placeholder="Bei welcher Gesellchaft war der Vorvertrag?"  class="form-control" required >
+                                  <div class="fill-in-help"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- <div class="col-12 col-sm-12 col-lg-2 col-xl-2 d-none"></div> -->
+              
+          </div>
+        </div>
+
+        <button onclick="nextStep()"
+            class="mt-3 btn btn-outline-primary next action-button step1 container-wrapper"
+            value="Weiter"
+            title="Weiter zum nächsten Schritt"
+            id="page1Btn"
+            >Weiter</button>
+
+        <button onclick="prevStep()"
+            class="mt-3 btn btn-outline-primary next action-button step1 container-wrapper"
+            value="Weiter"
+            title="Weiter zum nächsten Schritt"
+            id="page1Btn"
+            >Zuruck</button>
+  </body>
+</html>

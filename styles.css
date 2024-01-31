@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/*progressbar*/
+
+.stepbar {
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.stepbar div.previous-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.stepbar div.previous-box .action-button-previous {
+  align-self: flex-end;
+}
+.container-process-bar {
+  margin-top: 16px;
+}
+
+.content,
+.point-description {
+  margin-bottom: 0px;
+  font-size: 1em;
+}
+
+#progressbar {
+  /* margin-bottom: 30px; */
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  display: initial;
+  padding-left: 0;
+  text-align: center;
+  margin-top: 16px;
+}
+
+#progressbar:before {
+  /* content: 'Schritte'; */
+  color: var(--secondary-color);
+  float: left;
+  /* position: relative; */
+  font-size: 1em;
+  margin-right: 15px;
+  margin-top: 2px;
+  font-family: inherit;
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 38px;
+  float: left;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+#progressbar li:first-child {
+  /* margin-left: -15px; */
+}
+
+/* Circle with step count -  nicht bearbeitet */
+#progressbar li:not(.subpoint):before {
+  content: counter(step);
+  counter-increment: step;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  background: var(--secondary-color);
+  border-radius: 25px;
+  margin: 0 0 0 14px;
+  padding-left: 0;
+  transition: background 0.1s;
+  font-family: inherit;
+  z-index: 1;
+  position: inherit;
+}
+
+/*progressbar connectors - Processlinie nicht verarbeitet*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  left: 0;
+  top: 11px;
+  z-index: 0; /*put it behind the numbers*/
+  transition: background 1s;
+}
+#progressbar li.active:after {
+  background: var(--primary-color);
+}
+
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+
+/*marking active/completed steps */
+/*The number of the step -> activee*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: var(--primary-color);
+}
+#progressbar li.active:after {
+  height: 5px;
+  top: 1em;
+}
+#progressbar li.subpoint {
+  width: 13px;
+}
+
+#progressbar li.subpoint:before {
+  content: '';
+  counter-increment: inherit;
+  width: 24px;
+  height: 24px;
+  line-height: 26px;
+  display: block;
+  font-size: 1.2em;
+  color: transparent;
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+}
+
+#progressbar li .step-info {
+  /*color: red;*/
+  position: absolute;
+  left: 0;
+  width: 0;
+  opacity: 0;
+  top: 7px;
+}
+
+.point-description {
+  display: flex;
+  margin-bottom: 0;
+  font-size: 1em;
+  color: var(--secondary-color);
+  line-height: 23px;
+  font-family: inherit;
+}
+.container-process-bar {
+  display: flex;
+  flex-wrap: wrap;
+}
