@@ -129,7 +129,10 @@
         <div id="step-1" class="step w-100">
           <h1 class="step-question">Wie viele Tiere werden mit der THV abgesichert?</h1>
           <div class="line-bottom"></div>
-          <input type="number" name="animalNumber" placeholder="number of animals" />
+          <input type="number" name="dogCount" placeholder="number of dogs" />
+          <input type="number" name="horseCount" placeholder="number of horse" />
+          <input type="number" name="ponyCount" placeholder="number of ponys" />
+          <input type="number" name="donkeyCount" placeholder="number of donkey" />
         </div>
 
         <div id="step-2" class="step w-100 d-none">
@@ -531,6 +534,66 @@
               
           </div>
         </div>
+     
+        <div id="step-6" class="step w-100 d-none">
+            <h1 class="step-question">Angaben zu deiner Person - erzähle uns mehr über dich.</h1>
+            <div class="previous-box d-flex flex-row justify-content-end my-2">
+                <button onclick="goPrevStep()" class=" hyperlink_txt btn btn-outline-primary previous action-button-previous" value="Zurück">Zurück</button>
+            </div>
+            <div class="line-bottom"></div>
+            <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                    <div class="row formgroup">
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                            <div class="form-group">
+                                <select id="customer-gender" name="customer-gender" class="form-select" required>
+                                    <option value="anrede" disabled selected>Anrede</option>
+                                    <option value="herr">Herr</option>
+                                    <option value="frau">Frau</option>
+                                </select>
+                                
+                                <div class="fill-in-help invalid-check">Bitte treffe eine Auswahl.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                            <div class="form-group">
+                                <input type="text" id="title" placeholder="Titel(optional)" required class="form-control">
+                                <div class="fill-in-help"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                    <div class="row formgroup">
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                            <div class="form-group">
+                                <input type="text" id="vorname" placeholder="Vorname" required class="form-control">
+                                <div class="fill-in-help" id="invalid-check-firstname">Nenne uns bitte deinen Vorname.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                            <div class="form-group">
+                                <input type="text" id="nachname" placeholder="Nachname" required class="form-control">
+                                <div class="fill-in-help" id="invalid-check-lastname">Nenne uns bitte deinen Nachname.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-6 col-xxl-6">
+                        <div class="form-group">
+                            <input type="text" id="birthdate" placeholder="Geburtsdatum(TT.MM.JJJJ)" onfocus="(this.type = 'date')" required class="form-control">
+                            <div class="fill-in-help" id="invalid-check-birthdate">Nenne uns bitte dein Geburtsdatum.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
         <button onclick="nextStep()"
             class="mt-3 btn btn-outline-primary next action-button step1 container-wrapper"

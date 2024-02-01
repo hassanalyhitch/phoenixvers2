@@ -100,6 +100,25 @@ h1 {
   z-index: 1;
   position: inherit;
 }
+/* Circle with step count -  nicht bearbeitet */
+#progressbar li:not(.dynamic-subpoint):before {
+  content: counter(step);
+  counter-increment: step;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  background: var(--secondary-color);
+  border-radius: 25px;
+  margin: 0 0 0 14px;
+  padding-left: 0;
+  transition: background 0.1s;
+  font-family: inherit;
+  z-index: 1;
+  position: inherit;
+}
 
 /*progressbar connectors - Processlinie nicht verarbeitet*/
 #progressbar li:after {
@@ -137,6 +156,23 @@ h1 {
 }
 
 #progressbar li.subpoint:before {
+  content: '';
+  counter-increment: inherit;
+  width: 24px;
+  height: 24px;
+  line-height: 26px;
+  display: block;
+  font-size: 1.2em;
+  color: transparent;
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+}
+#progressbar li.dynamic-subpoint {
+  width: 13px;
+}
+
+#progressbar li.dynamic-subpoint:before {
   content: '';
   counter-increment: inherit;
   width: 24px;

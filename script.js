@@ -40,23 +40,27 @@ function nextStep() {
     //remove what was previously added
     //add progress bar sections
     let progressBar = document.getElementById('progressbar')
-    totalAnimalCount = document.getElementsByName('animalNumber')[0].value;
+    dogsCount = document.getElementsByName('dogCount')[0].value;
+    horsesCount = document.getElementsByName('horseCount')[0].value;
+    ponyCount = document.getElementsByName('ponyCount')[0].value;
+    donkeyCount = document.getElementsByName('donkeyCount')[0].value;
+    totalAnimalCount = Number(dogsCount) + Number(horsesCount) + Number(ponyCount) + Number(donkeyCount);
     console.log(totalAnimalCount);
     document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{subpoint.remove()});
     for(let x=0; x<totalAnimalCount; x++){
       let liTemplate = document.getElementsByClassName('subpoint')[0];
       let liNode = liTemplate.cloneNode(true);
       liNode.classList.add('dynamic-subpoint');
-      liNode.classList.remove('active')
+      liNode.classList.remove('subpoint');
+      liNode.classList.remove('active');
       progressBar.insertBefore(liNode, document.getElementsByClassName('subpoint')[2]);
     }
 
-
-    //testing - let dogs = totalAnimalCount
-      dogsCount = totalAnimalCount;
-    // 
     //add animal forms to dom tree
     dogForms(dogsCount);
+    horseForms(horsesCount);
+    ponyForms(ponyCount);
+    donkeyForms(donkeyCount);
   }
 
   if (currentStep.step < totalSteps) {
@@ -121,12 +125,9 @@ currentStep.registerListener(function(step){
           step.classList.remove('d-none');
         }
       });
+      document.querySelectorAll('.subpoint').forEach((subpoint, index)=>{subpoint.classList.remove('active')});
       $('.subpoint:eq(0)').addClass('active');
-      document.querySelectorAll('.subpoint').forEach((subpoint, index)=>{
-        if(index > 0){
-          subpoint.classList.remove('active');
-        }
-      });
+      
       break;
     }
     case 3 :{
@@ -137,16 +138,14 @@ currentStep.registerListener(function(step){
           step.classList.remove('d-none');
         }
       });
-      $('.subpoint:eq(1)').addClass('active');
       document.querySelectorAll('.subpoint').forEach((subpoint, index)=>{
-        if(index > 1){
+        if(index > 0){
           subpoint.classList.remove('active');
         }
       });
+      $('.mainpoint:eq(1)').removeClass('active');
+      $('.subpoint:eq(1)').addClass('active');
       
-      // document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-      //   subpoint.classList.remove('active');
-      // });
       break;
     }
     case 4 :{
@@ -159,100 +158,30 @@ currentStep.registerListener(function(step){
       });
       
       $('.mainpoint:eq(1)').addClass('active');
-
-      //animal form logic
-      if(currentSubStep < 5){
-        //dog
-        switch(currentSubStep){
-          case 0: {
-            document.querySelectorAll('.dogForm').forEach((form, index)=>{
-              if(index > 0){
-                  form.classList.add('d-none');
-                }
-            });
-            
-            document.getElementsByClassName('dogForm')[1].classList.remove('d-none');
-            document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-              subpoint.classList.remove('active');
-            });
-            break;
-          }
-          case 1: {
-            document.querySelectorAll('.dogForm').forEach((form, index)=>{
-              if(index != 2){
-                  form.classList.add('d-none');
-                }
-            });
-            
-            document.getElementsByClassName('dogForm')[2].classList.remove('d-none');
-            document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-              if(index > 0){
-                subpoint.classList.remove('active');
-              }
-            });
-            $('.dynamic-subpoint:eq(0)').addClass('active');
-            break;
-          }
-          case 2: {
-            document.querySelectorAll('.dogForm').forEach((form, index)=>{
-              if(index != 3){
-                  form.classList.add('d-none');
-                }
-            });
-            
-            document.getElementsByClassName('dogForm')[3].classList.remove('d-none');
-            $('.dynamic-subpoint:eq(1)').addClass('active');
-            document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-              if(index > 1){
-                subpoint.classList.remove('active');
-              }
-            });
-            break;
-          }
-          case 3: {
-            document.querySelectorAll('.dogForm').forEach((form, index)=>{
-              if(index != 4){
-                  form.classList.add('d-none');
-                }
-            });
-            
-            document.getElementsByClassName('dogForm')[4].classList.remove('d-none');
-            $('.dynamic-subpoint:eq(2)').addClass('active');
-            document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-              if(index > 2){
-                subpoint.classList.remove('active');
-              }
-            });
-            break;
-          }
-          case 4: {
-            document.querySelectorAll('.dogForm').forEach((form, index)=>{
-              if(index != 5){
-                  form.classList.add('d-none');
-                }
-            });
-            
-            document.getElementsByClassName('dogForm')[5].classList.remove('d-none');
-            $('.dynamic-subpoint:eq(3)').addClass('active');
-            document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-              if(index > 3){
-                subpoint.classList.remove('active');
-              }
-            });
-            break;
-          }
+      document.querySelectorAll('.subpoint').forEach((subpoint, index)=>{
+        if(index > 1){
+          subpoint.classList.remove('active');
         }
+      });
+      //animal form logic
+      document.querySelectorAll('.dynamic-form').forEach((form, index)=>{
+        console.log(index);
+        if(currentSubStep == index){
+          form.classList.remove('d-none');
+        } else {
+          form.classList.add('d-none');
+        }
+      });
 
-      } else if(currentSubStep < 10){
-        //horse
+      //progressbar logic
+      document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
+        if(index < currentSubStep){
+          subpoint.classList.add('active');
+        } else {
+          subpoint.classList.remove('active');
+        }
+      });
 
-      } else if(currentSubStep < 15){
-        //pony
-
-      } else {
-        //donkey
-
-      }
       break;
     }
     case 5 :{
@@ -263,16 +192,32 @@ currentStep.registerListener(function(step){
           step.classList.remove('d-none');
         }
       });
-      $('.subpoint:eq(2)').addClass('active');
+      
+      document.getElementsByClassName('dynamic-subpoint')[document.getElementsByClassName('dynamic-subpoint').length - 1].classList.add('active');
+      document.querySelectorAll('.subpoint').forEach((subpoint, index)=>{
+        if(index > 1){
+          subpoint.classList.remove('active');
+        }
+      });
+      
+      break;
+    }
+    case 6 :{
+      document.querySelectorAll('.step').forEach((step, index)=>{
+        if(index != 5){
+            step.classList.add('d-none');
+        } else {
+          step.classList.remove('d-none');
+        }
+      });
+     
       document.querySelectorAll('.subpoint').forEach((subpoint, index)=>{
         if(index > 2){
           subpoint.classList.remove('active');
         }
       });
+      $('.subpoint:eq(2)').addClass('active');
       
-      // document.querySelectorAll('.dynamic-subpoint').forEach((subpoint, index)=>{
-      //   subpoint.classList.remove('active');
-      // });
       break;
     }
 
@@ -296,6 +241,7 @@ function dogForms(animalCount){
       let formContent = formContentTemplate.cloneNode(true);
       
       // formContent.classList.remove('d-none');
+      formContent.classList.add('dynamic-form');
       formContent.querySelector('div > #dogName').setAttribute('name', 'dogName'+i);
       formContent.querySelector('div > #dogName').setAttribute('placeholder', `Name des ${i+1}. Hundes`);
 
@@ -309,4 +255,87 @@ function dogForms(animalCount){
       console.log('dog form ', i+1, ' added');
   } 
       
+}
+
+//horse forms
+function horseForms(animalCount){
+  document.querySelectorAll('.horseForm').forEach((form, index)=>{
+      if(index > 0){
+          form.remove();
+      }
+  });
+  
+  for(let i = 0;i < animalCount; i++){
+      
+      let formContentTemplate = document.getElementsByClassName('horseForm')[0];
+      let formContent = formContentTemplate.cloneNode(true);
+      
+      // formContent.classList.remove('d-none');
+      formContent.classList.add('dynamic-form');
+      formContent.querySelector('div > #horseName').setAttribute('name', 'horseName'+i);
+      formContent.querySelector('div > #horseName').setAttribute('placeholder', `Name des ${i+1}. Pferdes`);
+
+      formContent.querySelector('div > #horseBreed').setAttribute('name', 'horseBreed'+i);
+      formContent.querySelector('div > #horseBirthDate').setAttribute('name','horseBirthDate'+i);
+      formContent.querySelector('div > #horseFurColor').setAttribute('name','horseFurColor'+ i);
+      formContent.querySelector('div > #horseGender').setAttribute('name','horseGender'+ i);
+
+
+      document.getElementById('animalForm').appendChild(formContent);
+      console.log('horse form ', i+1, ' added');
+  }     
+}
+
+//pony forms
+function ponyForms(animalCount){
+   
+  document.querySelectorAll('.ponyForm').forEach((form, index)=>{
+      if(index > 0){
+          form.remove();
+      }
+  });
+  
+  for(let i = 0;i < animalCount; i++){
+      
+      let formContentTemplate = document.getElementsByClassName('ponyForm')[0];
+      let formContent = formContentTemplate.cloneNode(true);
+
+      // formContent.classList.remove('d-none');
+      formContent.classList.add('dynamic-form');
+      formContent.querySelector('div > #ponyName').setAttribute('name', 'horseName'+i);
+      formContent.querySelector('div > #ponyName').setAttribute('placeholder', `Name des ${i+1}. Ponys`);
+      formContent.querySelector('div > #ponyBreed').setAttribute('name', 'ponyBreed'+i);
+      formContent.querySelector('div > #ponyBirthDate').setAttribute('name','ponyBirthDate'+i);
+      formContent.querySelector('div > #ponyFurColor').setAttribute('name','ponyFurColor'+ i);
+      formContent.querySelector('div > #ponyGender').setAttribute('name','ponyGender'+ i);
+      document.getElementById('animalForm').appendChild(formContent);
+      console.log('pony form ', i+1, ' added');
+  }     
+}
+
+//donkey forms
+function donkeyForms(animalCount){
+  document.querySelectorAll('.donkeyForm').forEach((form, index)=>{
+      if(index > 0){
+          form.remove();
+      }
+  });
+
+  for(let i = 0;i < animalCount; i++){
+      
+      let formContentTemplate = document.getElementsByClassName('donkeyForm')[0];
+      let formContent = formContentTemplate.cloneNode(true);
+      
+      // formContent.classList.remove('d-none');
+      formContent.classList.add('dynamic-form');
+      formContent.querySelector('div > #donkeyName').setAttribute('name', 'donkeyName'+i);
+      formContent.querySelector('div > #donkeyName').setAttribute('placeholder', `Name des ${i+1}. Esels`);
+      formContent.querySelector('div > #donkeyBreed').setAttribute('name', 'donkeyBreed'+i);
+      formContent.querySelector('div > #donkeyBirthDate').setAttribute('name','donkeyBirthDate'+i);
+      formContent.querySelector('div > #donkeyFurColor').setAttribute('name','donkeyFurColor'+ i);
+      formContent.querySelector('div > #donkeyGender').setAttribute('name','donkeyGender'+ i);
+
+      document.getElementById('animalForm').appendChild(formContent);
+      console.log('donkey form ', i+1, ' added');
+  }   
 }
