@@ -33,6 +33,8 @@ var ponyCount = 0;
 var donkeyCount = 0;
 var totalAnimalCount = 0;
 
+var invalidForm = false;
+
 function nextStep() {
   
   if(currentStep.step == 1){
@@ -65,6 +67,27 @@ function nextStep() {
 
   if (currentStep.step < totalSteps) {
     if (currentStep.step === 4) {
+        invalidForm = false;
+        
+        document.querySelectorAll('.dynamic-form').forEach((form, index)=>{
+          if(form.querySelector('div > #dogName')?.value == '' || form.querySelector('div > #dogBreed')?.value == '' || form.querySelector('div > #dogBirthDate')?.value == '' || form.querySelector('div > #dogFurColor')?.value == '' || form.querySelector('div > #dogGender')?.value == ''){
+            invalidForm = true;
+          }
+          if(form.querySelector('div > #horseName')?.value == '' || form.querySelector('div > #horseBreed')?.value == '' || form.querySelector('div > #horseBirthDate')?.value == '' || form.querySelector('div > #horseFurColor')?.value == '' || form.querySelector('div > #horseGender')?.value == ''){
+            invalidForm = true;
+          }
+          if(form.querySelector('div > #ponyName')?.value == '' || form.querySelector('div > #ponyBreed')?.value == '' || form.querySelector('div > #ponyBirthDate')?.value == '' || form.querySelector('div > #ponyFurColor')?.value == '' || form.querySelector('div > #ponyGender')?.value == ''){
+            invalidForm = true;
+          }
+          if(form.querySelector('div > #donkeyName')?.value == '' || form.querySelector('div > #donkeyBreed')?.value == '' || form.querySelector('div > #donkeyBirthDate')?.value == '' || form.querySelector('div > #donkeyFurColor')?.value == '' || form.querySelector('div > #donkeyGender')?.value == ''){
+            invalidForm = true;
+          }
+        });
+
+        if(invalidForm){
+          return;
+        }
+
       totalAnimalCount = Number(dogsCount) + Number(horsesCount) + Number(ponyCount) + Number(donkeyCount);
       console.log('current substep ', currentSubStep, 'totalAnimal ', totalAnimalCount);
       if (currentSubStep < (totalAnimalCount - 1)) {
